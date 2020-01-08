@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/app_audio_settings">
+        <ListPreference
+            android:dialogTitle="Notification Sound"
+            android:entries="@array/DispensedSounds"
+            android:entryValues="@array/DispensedSounds"
+            android:key="dispensedSound"
+            android:summary="Select treat dispensed sound"
+            android:defaultValue="bloop"
+            android:title="Treat Dispensed" />
+        <ListPreference
+            android:dialogTitle="Failure Sound"
+            android:entries="@array/FailureSounds"
+            android:entryValues="@array/FailureSounds"
+            android:key="failedSound"
+            android:summary="Select dispense failure sound"
+            android:defaultValue="nuh_uh"
+            android:title="Failure" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/connection_settings">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="auto_connect_startup"
+            android:summary="@string/automatically_connect_startup"
+            android:title="@string/automatically_connect_startup_title"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="auto_connect"
+            android:summary="@string/automatically_connect"
+            android:title="@string/automatically_connect_title"/>
+        <EditTextPreference
+            android:title="Auto Connect Timeout"
+            android:key="auto_connect_timeout"
+            android:defaultValue="15"
+            android:summary="Sets the timeout (seconds) for connecting to last used device."/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="show_only_smart_dog_devices"
+            android:summary="@string/list_only_smart_dog_devices"
+            android:title="@string/list_only_smart_dog_devices_title"/>
+    </PreferenceCategory>
+    <PreferenceCategory>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_actionbar_menu"
+        android:summary="@string/show_actionbar_menu"
+        android:title="@string/show_actionbar_menu_title"/>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

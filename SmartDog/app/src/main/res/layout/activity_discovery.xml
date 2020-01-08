@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.DiscoveryActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15sp"
+            android:text="@string/discovered_devices"
+            android:textColor="@color/background"
+            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+
+                android:paddingLeft="5sp"
+                android:textSize="20sp"
+                android:layout_weight="0.42"
+                android:gravity="center"
+                android:textColor="#222222"/>
+            <View
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:layout_weight="0.03" />
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textSize="20sp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textColor="#222222"/>
+            <View
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:layout_weight="0.03" />
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:textSize="20sp"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="#222222"/>
+        </LinearLayout>
+    </LinearLayout>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@android:id/empty"
+            android:text="@string/no_devices_found"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
+            android:paddingLeft="15sp"
+            android:textSize="20sp"
+            android:layout_below="@+id/title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paired_devices"
+        android:id="@+id/subTitleView"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="15sp"
+        android:paddingTop="15sp"
+        android:textColor="#ffdd725a"
+        android:textSize="24sp"
+        android:visibility="gone"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_below="@+id/subTitleView"
+        android:visibility="gone"/>
+</RelativeLayout>

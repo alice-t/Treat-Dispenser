@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Smart Dog</string>
+    <string name="about">About Smart Dog</string>
+    <string name="treat">Treat</string>
+    <string name="smart_dog_icon">Smart Dog Logo</string>
+    <string name="settings">Settings</string>
+    <string name="app_icon_credit">App icon by Freepik www.flaticon.com</string>
+    <string name="version_number">Smart Dog Version 0.31</string>
+    <string name="clear">Clear</string>
+    <string name="exit">Exit</string>
+    <string name="ok">OK</string>
+    <string name="done">Done</string>
+
+    <!-- Bluetooth -->
+    <string name="paired_devices">Paired Devices</string>
+    <string name="discovered_devices">Discovered Devices</string>
+    <string name="connect">Connect</string>
+    <string name="scan_connecting">Connecting…</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="type">Type</string>
+    <string name="no_devices_found">No devices found</string>
+    <string name="mac">mac</string>
+    <string name="sentbytes_format">Sent: %d bytes </string>
+    <string name="receivedbytes_format">Received: %d bytes</string>
+    <string name="uart_text_dataomitted">(Previous data omitted to improve performance…)</string>
+    <string name="mqtt_connection_lost">Mqtt connection to server lost</string>
+    <string name="mqtt_connection_failed">Mqtt server connection failed</string>
+    <string name="unable_to_connect">Unable to connect to last used device.\nDisable \'Auto Connect\' in settings and try again.</string>
+
+    <!-- Treat Dispenser -->
+    <string name="switchLongPressDelay">Switch Long Press Delay (sec)</string>
+    <string name="servo_offset">Servo Offset</string>
+    <string name="invalid_timeout">Timeout unchanged. Please set a number between 5 and 30.</string>
+    <string name="battery_level_indicator">Battery level indicator</string>
+    <string name="reload">Reload</string>
+    <string name="audio_settings">Audio Settings</string>
+    <string name="capacity">Capacity</string>
+    <string name="app_audio_settings">App Audio Settings</string>
+    <string name="notify_treat_given">Play sound when treat dispensed</string>
+    <string name="notify_last_treat">Warn when last treat dispensed</string>
+    <string name="notify_no_treat_given">Warn when treat dispenser empty</string>
+    <string name="connection_settings">Connection Settings</string>
+    <string name="automatically_connect_title">Auto Connect</string>
+    <string name="automatically_connect">Auto connect to last used device (don\'t search for devices)</string>
+    <string name="automatically_connect_startup_title">Auto Connect on Startup</string>
+    <string name="automatically_connect_startup">Auto connect to last used device on app startup</string>
+    <string name="show_actionbar_menu_title">Show ActionBar Menu</string>
+    <string name="show_actionbar_menu">Show ActionBar Menu in Device Control Window</string>
+    <string name="list_only_smart_dog_devices_title">List only Smart Dog devices</string>
+    <string name="list_only_smart_dog_devices">During device discovery, list only Smart Dog devices</string>
+    <string name="servo_stop_timeout">Servo Stop Timeout</string>
+
+</resources>
+

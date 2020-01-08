@@ -1,0 +1,382 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.smartdog.app.DeviceControlActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:layout_weight="0.6" />
+        <ImageView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/dog800"
+            android:contentDescription="@string/smart_dog_icon"
+            android:layout_marginBottom="5dp"
+            android:theme="@style/Base.TextAppearance.AppCompat" />
+        <View
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:layout_weight="0.6" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/deviceSettingsContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/capacity"
+            android:textSize="16sp"
+            android:layout_margin="10sp"
+            android:layout_marginRight="0sp"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+            <RadioButton
+                android:id="@+id/radio_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:buttonTint="@color/colorSecondary"
+                android:onClick="onRadioButtonClicked"
+                android:layout_marginStart="10sp"/>
+            <RadioButton
+                android:id="@+id/radio_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:buttonTint="@color/colorSecondary"
+                android:onClick="onRadioButtonClicked"
+                android:layout_marginStart="10sp"/>
+            <RadioButton
+                android:id="@+id/radio_nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:buttonTint="@color/colorSecondary"
+                android:onClick="onRadioButtonClicked"
+                android:layout_marginStart="10sp"/>
+            <RadioButton
+                android:id="@+id/radio_eleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11"
+                android:buttonTint="@color/colorSecondary"
+                android:onClick="onRadioButtonClicked"
+                android:layout_marginStart="10sp"/>
+        </RadioGroup>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/notifyTreatDispensedCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notify_treat_given"
+        android:buttonTint="@color/colorSecondary"
+        android:layout_marginLeft="10sp"/>
+    <CheckBox
+        android:id="@+id/notifyLastTreatCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notify_last_treat"
+        android:buttonTint="@color/colorSecondary"
+        android:layout_marginLeft="10sp"/>
+    <CheckBox
+        android:id="@+id/notifyNoTreatCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notify_no_treat_given"
+        android:buttonTint="@color/colorSecondary"
+        android:layout_marginLeft="10sp"/>
+
+        <TextView
+        android:id="@+id/timeoutSeekBarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/servo_stop_timeout"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:textSize="15sp"
+        android:visibility="gone"/>
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/timeoutSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginEnd="10sp"
+            app:bsb_bubble_text_color="@color/colorPrimaryDark"
+            app:bsb_max="5.0"
+            app:bsb_min="1.0"
+            app:bsb_progress="3.0"
+            app:bsb_section_count="8"
+            app:bsb_is_float_type="true"
+            app:bsb_second_track_color="@color/colorSecondary"
+            app:bsb_track_color="@color/colorAccent"
+            app:bsb_section_text_position="bottom_sides"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/offsetSeekBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servo_offset"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="10sp"
+            android:textSize="15sp" />
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/offsetSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginEnd="10sp"
+            app:bsb_bubble_text_color="@color/colorPrimaryDark"
+            app:bsb_max="50.0"
+            app:bsb_min="-50"
+            app:bsb_progress="0"
+            app:bsb_section_count="6"
+            app:bsb_is_float_type="false"
+            app:bsb_second_track_color="@color/colorSecondary"
+            app:bsb_track_color="@color/colorAccent"
+            app:bsb_section_text_position="bottom_sides"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switchLongPressDelay"
+            android:layout_marginLeft="10sp"
+            android:textSize="15sp" />
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/longPressSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginEnd="10sp"
+            app:bsb_bubble_text_color="@color/colorPrimaryDark"
+            app:bsb_max="2.5"
+            app:bsb_min="1.0"
+            app:bsb_progress="0"
+            app:bsb_section_count="6"
+            app:bsb_is_float_type="true"
+            app:bsb_second_track_color="@color/colorSecondary"
+            app:bsb_track_color="@color/colorAccent"
+            app:bsb_section_text_position="bottom_sides"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"/>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:layout_weight="0.75" />
+        <Button
+            android:onClick="onDoneBtnClick"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_margin="10sp"
+            android:layout_marginTop="0dp"
+            android:padding="5sp"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/control_layout"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:onClick="dispenseTreat"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5sp"
+                android:layout_marginTop="0dp"
+                android:padding="5sp"
+                android:text="@string/treat"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <Button
+                android:onClick="onExitClick"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5sp"
+                android:layout_marginTop="0dp"
+                android:padding="5sp"
+                android:text="@string/exit"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/custom_progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:indeterminate="false"
+            android:max="9"
+            android:minHeight="50dp"
+            android:minWidth="200dp"
+            android:layout_weight="0.7"
+            android:progress="1"/>
+
+            <ImageView
+                android:id="@+id/batteryIcon"
+                android:layout_height="60sp"
+                android:layout_width="55sp"
+                android:src="@drawable/battery3"
+                android:layout_marginTop="5sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_weight="0.3"
+                android:contentDescription="@string/battery_level_indicator" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/capacityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/bufferTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:minHeight="140sp"
+                    android:maxHeight="140sp"
+                    android:layout_margin="5sp"
+                    android:padding="5sp"
+                    android:textSize="16sp"
+                    android:background="#eeeeee"
+                    android:cursorVisible="false"
+                    android:gravity="top"
+                    android:scrollbarFadeDuration="0" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.3">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClickReload"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:padding="5sp"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        android:text="@string/reload" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClickSettings"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:padding="5sp"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        android:text="@string/settings" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClickClear"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:padding="5sp"
+                        android:textSize="20sp"
+                        android:layout_gravity="end"
+                        android:text="@string/clear" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sentBytesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:paddingLeft="5sp"
+                    android:text="@string/sentbytes_format"
+                    android:textColor="@color/default_infotextcolor" />
+
+                <TextView
+                    android:id="@+id/receivedBytesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:paddingLeft="5sp"
+                    android:text="@string/receivedbytes_format"
+                    android:textColor="@color/default_infotextcolor" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

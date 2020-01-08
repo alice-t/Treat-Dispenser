@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="DispensedSounds">
+        <item>dog bark</item>
+        <item>bloop</item>
+        <item>reception bell</item>
+        <item>electro chirp</item>
+        <item>Oi!</item>
+        <item>trill</item>
+        <item>No Sound</item>
+    </array>
+    <array name="FailureSounds">
+        <item>uh-oh</item>
+        <item>No Sound</item>
+    </array>
+
+</resources>
